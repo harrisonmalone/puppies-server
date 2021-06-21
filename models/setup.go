@@ -12,6 +12,6 @@ func ConnectToDb() {
 	if err != nil {
 		panic("failed to connect database")
 	}
-	database.AutoMigrate(&Puppy{})
+	database.AutoMigrate(&Puppy{}, &User{})
 	DB = database
 }

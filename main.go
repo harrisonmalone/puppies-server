@@ -16,10 +16,11 @@ func setupRouter() *gin.Engine {
 	}
 	r := gin.Default()
 
-	r.GET("/puppies", handlers.PuppiesRoutes{}.Index)
-	r.POST("/puppies", handlers.PuppiesRoutes{}.Create)
-	r.GET("/puppies/:id", handlers.PuppiesRoutes{}.Show)
-	r.DELETE("/puppies/:id", handlers.PuppiesRoutes{}.Destroy)
+	r.GET("/puppies", handlers.PuppyRoutes{}.Index)
+	r.POST("/puppies", handlers.PuppyRoutes{}.Create)
+	r.GET("/puppies/:id", handlers.PuppyRoutes{}.Show)
+	r.DELETE("/puppies/:id", handlers.PuppyRoutes{}.Destroy)
+	r.POST("/users", handlers.UserRoutes{}.Create)
 	return r
 }
 
